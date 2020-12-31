@@ -11,9 +11,23 @@ namespace Aurora.Infra.Data.Repository
         {
         }
 
-        public void Remove(int id) =>
+        public void Remove(int id)
+        {
             base.Delete(id);
+            base.SaveChanges();
+        }
+            
+        
 
+        public void RemoveAll()
+        {
+            var ent = Select();
+            foreach(var e in ent)
+            {
+                base.Delete(e.Id);
+            }
+            base.SaveChanges();
+        }
 
         public void Save(Worker obj)
         {

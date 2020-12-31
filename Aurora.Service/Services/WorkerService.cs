@@ -33,6 +33,10 @@ namespace Aurora.Service.Services
         public void Delete(int id) =>
             _repositoryUser.Remove(id);
 
+        public void DeleteAll()
+        {
+            _repositoryUser.RemoveAll();
+        }
         public WorkerModel Insert(CreateWorkerModel userModel)
         {
             var user = userModel.ConvertToUserEntity();

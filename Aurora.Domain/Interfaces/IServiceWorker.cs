@@ -11,7 +11,9 @@ namespace Aurora.Domain.Interfaces
 
         void Delete(int id);
 
+        void DeleteAll();
         WorkerModel RecoverById(int id);
+
 
         IEnumerable<WorkerModel> RecoverAll();
     }

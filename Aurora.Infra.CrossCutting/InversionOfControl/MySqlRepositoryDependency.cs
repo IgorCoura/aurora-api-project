@@ -9,6 +9,7 @@ namespace Aurora.Infra.CrossCutting.InversionOfControl
         public static void AddMySqlRepositoryDependency(this IServiceCollection services)
         {
             services.AddScoped<IRepositoryWorker, WorkerRepository>();
+            services.AddScoped<IRepositoryPpe, PpeRepository>();
         }
     }
 }

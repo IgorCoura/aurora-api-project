@@ -40,13 +40,20 @@ namespace Aurora.Infra.Data.Repository
         protected virtual void Delete(int id)
         {
             _mySqlContext.Set<TEntity>().Remove(Select(id));
+        }
+
+        protected virtual void SaveChanges()
+        {
             _mySqlContext.SaveChanges();
         }
+
 
         protected virtual IList<TEntity> Select() =>
             _mySqlContext.Set<TEntity>().ToList();
 
         protected virtual TEntity Select(int id) =>
             _mySqlContext.Set<TEntity>().Find(id);
+
+
     }
 }

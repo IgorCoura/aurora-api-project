@@ -9,6 +9,8 @@ namespace Aurora.Domain.Interfaces
 
         void Remove(int id);
 
+        void RemoveAll();
+
         Worker GetById(int id);
 
         IList<Worker> GetAll();

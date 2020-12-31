@@ -60,6 +60,21 @@ namespace Aurora.Application.Controllers
             }
         }
 
+        [HttpDelete]
+        public IActionResult RemoveAll()
+        {
+            try
+            {
+                _serviceUser.DeleteAll();
+
+                return NoContent();
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
         [HttpGet]
         public IActionResult RecoverAll()
         {

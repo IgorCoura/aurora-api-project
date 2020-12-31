@@ -6,14 +6,15 @@ namespace Aurora.Domain.Entities
 {
     public class PersonalProtectiveEquipment : BaseEntity<int>
     {
-        public PersonalProtectiveEquipment(string description, int quantity, string approvalCertificate, DateTime manufacturingDate, int durability)
+        public PersonalProtectiveEquipment(int id, string description, int quantity, string approvalCertificate, DateTime manufacturingDate, int durability):base(id)
         {
             AddNotifications(
                 ValidateDescription(description),
-                ValidateQuantity(quantity),
+                //ValidateQuantity(quantity),
                 ValidateApprovalCertificate(approvalCertificate),
-                ValidateManufacturingDate(manufacturingDate),
-                ValidateDurability(durability));
+                ValidateManufacturingDate(manufacturingDate)
+                //ValidateDurability(durability)
+                );
 
             if (Valid)
             {
