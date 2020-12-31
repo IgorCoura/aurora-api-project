@@ -1,4 +1,5 @@
 ﻿using Flunt.Validations;
+using System.Collections.Generic;
 
 namespace Aurora.Domain.ValueTypes
 {
@@ -30,6 +31,7 @@ namespace Aurora.Domain.ValueTypes
 
             int[] multiplierOne = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             int[] multiplierTwo = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            List<string> cpfInvalido = new List<string> { "00000000000", "11111111111", "22222222222", "33333333333", "44444444444", "55555555555", "66666666666", "77777777777", "88888888888", "99999999999" };
             string aux;
             string digit;
             int sum, rest;
@@ -41,6 +43,15 @@ namespace Aurora.Domain.ValueTypes
             {
                 contract.AddNotification(nameof(Nin), "CPF should have 11 chars.");
                 return;
+            }
+
+            foreach (string item in cpfInvalido)
+            {
+                if (item == _value)
+                {
+                    contract.AddNotification(nameof(Nin), "This CPF is invalid.");
+                    return;
+                }
             }
 
             aux = value.Substring(0, 9);
