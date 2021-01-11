@@ -10,11 +10,11 @@ namespace Aurora.Application.Controllers
 {
     [Route("api/ppe")]
     [ApiController]
-    public class PersonalProtectiveEquipment : Controller
+    public class PersonalProtectiveEquipmentController : Controller
     {
         private readonly IServicePpe _servicePpe;
 
-        public PersonalProtectiveEquipment(IServicePpe servicePpe)
+        public PersonalProtectiveEquipmentController(IServicePpe servicePpe)
         {
             _servicePpe = servicePpe;
         }
@@ -41,7 +41,7 @@ namespace Aurora.Application.Controllers
             {
                 var ppe = _servicePpe.Update(id, ppeModel);
 
-                return NoContent();
+                return Ok(ppe);
             }
             catch(Exception ex)
             {

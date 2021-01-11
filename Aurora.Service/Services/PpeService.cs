@@ -13,7 +13,7 @@ namespace Aurora.Service.Services
     {
         private readonly IRepositoryPpe _repositoryPpe;
         private readonly NotificationContext _notificationContext;
-        
+
         public PpeService(IRepositoryPpe repositoryPpe, NotificationContext notificationContext)
         {
             _repositoryPpe = repositoryPpe;
@@ -49,7 +49,7 @@ namespace Aurora.Service.Services
         }
 
         public PpeModel Update(int id, UpdatePpeModel ppeModel)
-        {                   
+        {
             var ppe = ppeModel.ConvertToPpeEntity(id);
             _notificationContext.AddNotifications(ppe.Notifications);
 

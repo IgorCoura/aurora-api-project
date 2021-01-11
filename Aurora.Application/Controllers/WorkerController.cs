@@ -37,7 +37,7 @@ namespace Aurora.Application.Controllers
             {
                 var user = _serviceUser.Update(id, userModel);
 
-                return NoContent();
+                return Ok(user);
             }
             catch (Exception ex)
             {

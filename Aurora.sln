@@ -10,6 +10,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service", "{705F8399-1D09-475B-B916-D011A706C4D3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{621E29D0-8D26-4742-B523-5C4217089949}"
+	ProjectSection(SolutionItems) = preProject
+		Aurora.Service\Services\WorkerService.cs = Aurora.Service\Services\WorkerService.cs
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{22AD4FE5-724C-4914-BAAB-20CAFC9FBB05}"
 EndProject

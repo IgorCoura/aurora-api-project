@@ -50,7 +50,7 @@ namespace Aurora.Domain.Entities
 
         public Password Password { get; }
 
-        public virtual IEnumerable<PpePossession> PpePossessions { get; }
+        public virtual IList<PpePossession> PpePossessions { get; }
 
         public int CalculateAge()
         {

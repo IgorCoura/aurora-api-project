@@ -10,6 +10,7 @@ namespace Aurora.Infra.CrossCutting.InversionOfControl
         {
             services.AddScoped<IRepositoryWorker, WorkerRepository>();
             services.AddScoped<IRepositoryPpe, PpeRepository>();
+            services.AddScoped<IRepositoryPpePossession, PpePossessionRepository>();
         }
     }
 }

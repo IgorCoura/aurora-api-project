@@ -10,10 +10,10 @@ namespace Aurora.Domain.Entities
         {
             AddNotifications(
                 ValidateDescription(description),
-                //ValidateQuantity(quantity),
+                ValidateQuantity(quantity),
                 ValidateApprovalCertificate(approvalCertificate),
+                ValidateDurability(durability),
                 ValidateManufacturingDate(manufacturingDate)
-                //ValidateDurability(durability)
                 );
 
             if (Valid)
@@ -38,7 +38,7 @@ namespace Aurora.Domain.Entities
 
         public int Durability { get; }
 
-        public virtual IEnumerable<PpePossession> PpePossessions { get; set; }
+        public virtual IList<PpePossession> PpePossessions { get; set; }
 
         public bool HasExpired() =>
             ManufacturingDate.AddDays(Durability) < DateTime.Now;
@@ -50,7 +50,7 @@ namespace Aurora.Domain.Entities
 
         private Contract ValidateQuantity(int quantity) =>
             new Contract()
-                .IsLowerOrEqualsThan(quantity, 0, nameof(Quantity), "The quantity must have more than 0.");
+                .IsGreaterThan(quantity, 0, nameof(Quantity), "The quantity must have more than 0.");
 
         private Contract ValidateApprovalCertificate(string approvalCertificate) =>
             new Contract()
@@ -62,6 +62,6 @@ namespace Aurora.Domain.Entities
 
         private Contract ValidateDurability(int durability) =>
             new Contract()
-                .IsLowerOrEqualsThan(durability, 0, nameof(Durability), "The durability must be more than 0 day.");
+                .IsGreaterThan(durability, 0, nameof(Durability), "The durability must be more than 0 day.");
     }
 }

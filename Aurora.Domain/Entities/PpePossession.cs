@@ -6,7 +6,7 @@ namespace Aurora.Domain.Entities
 {
     public class PpePossession : BaseEntity<int>
     {
-        public PpePossession(DateTime deliveryDate, DateTime returnDate, bool confirmation)
+        public PpePossession(DateTime deliveryDate, DateTime? returnDate, bool confirmation, int ID = default): base(id: ID)
         {
             DeliveryDate = deliveryDate;
             ReturnDate = returnDate;
