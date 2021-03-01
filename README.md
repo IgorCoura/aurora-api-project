@@ -1,18 +1,16 @@
+# Obsevação
+Cheguei nesse projeto apartir do bootcamp oferecido pela Digital Innovation One e fiz alterações para colocar em pratica os conceitos que aprendir de DDD (Design Driven Design).
+
+### Alterações
+- Criei o WorkerController e o PpePossessionController (PersonalProtectiveEquipmentPossession, responsavel por fazer a ligação entre o PersonalProtectiveEquipment e o worker) que possibilida criar, editar, buscar e deletar sua respequitivas entidades.
+- Criei o WorkerService e o PpePossessionService que faz algumas validações e conversão de dados.
+- Criei o WorkerRepository e o PpePossessionRepository que faz a ligação com o banco de dados.
+- E mais algumas outras alterações. 
+
+
 ![Aurora Project](https://repository-images.githubusercontent.com/128673011/f6ebdd80-b6da-11ea-94bb-9d141944b257)
-# Modificações 
-Criei um removeAll no WorkerController.
-
-Crie um PersonalProtectiveEquipmentController contendo:
--Register
--Update
--Remove
--Recover
--RecoverAll
-
-
 # What is Aurora project?
 It's an open source project, written in .NET Core, currently in version 3.1.
-
 The project's goals is to show that is possible to create an architecture more simple than others and using some concepts like DDD (Design Driven Design).
 
 ## Business proposal:
